@@ -10,7 +10,7 @@ const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 
 
 export const runtime = "nodejs";
-
+//old way of getting the context from chroma
 export const Chroma = async (req: Request,res:Response) => {
   const body = await req.body as { query: string };
   console.log(body);
@@ -20,7 +20,7 @@ export const Chroma = async (req: Request,res:Response) => {
 
   const googleEmbeddings = new GoogleGenerativeAIEmbeddings({
     apiKey: GOOGLE_API_KEY,
-    model: "text-embedding-004", // 768 dimensions
+    model: "text-embedding-004", // 768 dime nsions
   });
 
   const embeddingFunction = {
